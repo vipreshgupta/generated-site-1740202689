@@ -1,0 +1,358 @@
+Here's a comprehensive HTML file for an attractive and user-friendly restaurant booking website, incorporating the key elements and features you requested:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Haven - Restaurant Booking</title>
+    <style>
+        /* Color Scheme */
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #FFA500;
+            --accent-color: #228B22;
+            --text-color: #333;
+            --background-color: #FFF8DC;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://example.com/restaurant-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        /* Booking Button */
+        .btn-book {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-book:hover {
+            background-color: #1a6b1a;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 2rem 0;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 1rem;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            .hero {
+                height: 40vh;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#book">Book a Table</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Gourmet Haven</h1>
+                <p>Experience culinary excellence in the heart of the city</p>
+                <a href="#book" class="btn-book">Book a Table</a>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section container">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://example.com/appetizer.jpg" alt="Appetizer">
+                    <div class="menu-item-content">
+                        <h3>Appetizer</h3>
+                        <p>Delicious starters to whet your appetite</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://example.com/main-course.jpg" alt="Main Course">
+                    <div class="menu-item-content">
+                        <h3>Main Course</h3>
+                        <p>Exquisite dishes crafted with care</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://example.com/dessert.jpg" alt="Dessert">
+                    <div class="menu-item-content">
+                        <h3>Dessert</h3>
+                        <p>Sweet treats to end your meal on a high note</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book" class="container">
+            <h2>Book a Table</h2>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests:</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-book">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gourmet Haven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for enhanced interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Form submission handling
+            const bookingForm = document.querySelector('.booking-form');
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your booking! We will confirm your reservation shortly.');
+                bookingForm.reset();
+            });
+
+            // Menu item hover effect
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML file includes:
+
+1. A responsive design that adapts to different screen sizes.
+2. A color scheme that creates an appetizing and inviting atmosphere.
+3. Clear navigation with a sticky header for easy access to different sections.
+4. A hero section with a prominent call-to-action for booking.
+5. A menu section showcasing different categories with images and descriptions.
+6. A user-friendly booking form with essential fields.
+7. Basic interactivity using JavaScript for smooth scrolling, form submission handling, and hover effects.
+8. Accessibility features such as semantic HTML and proper labeling.
+
+To further enhance this website, you could:
+
+1. Add more detailed menu items and implement filtering options.
+2. Integrate a real-time booking system that checks availability.
+3. Include customer reviews and testimonials.
+4. Add a photo gallery showcasing the restaurant's ambiance and dishes.
+5. Implement a chatbot or live chat feature for customer support.
+
+Remember to replace placeholder images and content with actual restaurant-specific information and high-quality images. Also, ensure that all interactive features are thoroughly tested across different devices and browsers for optimal performance.
